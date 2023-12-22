@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="WordsQuizWPF.MVVM.View.QuizView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WordsQuizWPF.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+
+    
+    <Grid>
+        <TextBlock Name="QuestionNumber"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="0,60,0,0"
+                   FontSize="30"
+                   FontFamily="/Fonts/Ubuntu/#Ubuntu"/>
+        <TextBlock Text="Word:"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="0,50,0,0"
+                   FontSize="30"
+                   FontFamily="/Fonts/Ubuntu/#Ubuntu"/>
+        <Label Name="CurrentWord"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="0,120,0,0"
+                   FontSize="30"
+                   FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                   Content="{Binding CurrentWord}"/>
+        <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Center" Margin="0,50,0,0">
+            <Button Name="A_Answer" Width="137" Margin="20,10,0,10"
+                    FontSize="16"
+                    FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                    Content="{Binding A_variant}" Command="{Binding ChooseAnswerCommand}" CommandParameter="A_answer" Click="ResetAnimationClick"/>
+            <Button Name="B_Answer" Width="137" Margin="20,10,0,10" 
+                    FontSize="16"
+                    FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                    Content="{Binding B_variant}" Command="{Binding ChooseAnswerCommand}" CommandParameter="B_answer"  Click="ResetAnimationClick" />
+            <Button Name="C_Answer" Width="137" Margin="20,10,0,10" 
+                    FontSize="16"
+                    FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                    Content="{Binding C_variant}" Command="{Binding ChooseAnswerCommand}" CommandParameter="C_answer"  Click="ResetAnimationClick" />
+        </StackPanel>
+        <Line Name="TimerLine" X1="40" Y1="450" X2 ="460" Y2="450" StrokeThickness="10" Stroke="Blue">
+            <Line.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard x:Name="lineAnimation">
+                            <DoubleAnimation
+                                Storyboard.TargetName="TimerLine"
+                                Storyboard.TargetProperty="X2"
+                                From="460"
+                                To="40"
+                                Duration="0:0:5"
+                                RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Line.Triggers>
+        </Line>
+    </Grid>
+</UserControl>

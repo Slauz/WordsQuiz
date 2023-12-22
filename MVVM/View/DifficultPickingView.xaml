@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="WordsQuizWPF.MVVM.View.DifficultPickingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WordsQuizWPF.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <TextBlock 
+            Height="50"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center" 
+            Margin="0,30,0,0"
+            FontSize="28"
+            FontFamily="/Fonts/Ubuntu/#Ubuntu">
+            Choose words difficulty
+        </TextBlock>
+        <StackPanel Width="300" Height="300">
+            <Button Name="Easy"
+                        Height="90" Margin="5,7,5,0" Content="Easy" Foreground="Green"
+                        FontSize="30"
+                        FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                        Command="{Binding UpdateViewCommand}"
+                        CommandParameter="QuizEasy"/>
+            <Button Name="Medium"
+                        Height="90" Margin="5,7,5,0" Content="Medium" Foreground="Orange"
+                        FontSize="30"
+                        FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                        Command="{Binding UpdateViewCommand}"
+                        CommandParameter="QuizMedium"/>
+            <Button Name="Hard"
+                        Height="90" Margin="5,7,5,0" Content="Hard"  Foreground="Red"
+                        FontSize="30"
+                        FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                        Command="{Binding UpdateViewCommand}"
+                        CommandParameter="QuizHard"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

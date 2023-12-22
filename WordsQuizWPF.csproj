@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Ubuntu\Ubuntu-Bold.ttf" />
+    <None Remove="Fonts\Ubuntu\Ubuntu-BoldItalic.ttf" />
+    <None Remove="Fonts\Ubuntu\Ubuntu-Italic.ttf" />
+    <None Remove="Fonts\Ubuntu\Ubuntu-Light.ttf" />
+    <None Remove="Fonts\Ubuntu\Ubuntu-LightItalic.ttf" />
+    <None Remove="Fonts\Ubuntu\Ubuntu-Medium.ttf" />
+    <None Remove="Fonts\Ubuntu\Ubuntu-MediumItalic.ttf" />
+    <None Remove="Fonts\Ubuntu\Ubuntu-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Ubuntu\Ubuntu-Bold.ttf" />
+    <Resource Include="Fonts\Ubuntu\Ubuntu-BoldItalic.ttf" />
+    <Resource Include="Fonts\Ubuntu\Ubuntu-Italic.ttf" />
+    <Resource Include="Fonts\Ubuntu\Ubuntu-Light.ttf" />
+    <Resource Include="Fonts\Ubuntu\Ubuntu-LightItalic.ttf" />
+    <Resource Include="Fonts\Ubuntu\Ubuntu-Medium.ttf" />
+    <Resource Include="Fonts\Ubuntu\Ubuntu-MediumItalic.ttf" />
+    <Resource Include="Fonts\Ubuntu\Ubuntu-Regular.ttf" />
+  </ItemGroup>
+
+</Project>

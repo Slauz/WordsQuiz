@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WordsQuizWPF.MVVM.View.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WordsQuizWPF.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <TextBlock 
+            Height="50"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center" 
+            Margin="0,30,0,0"
+            FontSize="28"
+            FontFamily="/Fonts/Ubuntu/#Ubuntu">
+            Welcome to "Word quiz"!
+            </TextBlock>
+            <StackPanel Height="300"
+                    Width="300"
+                    Orientation="Vertical">
+                <Button Name="Play"
+                        Height="90" Margin="5,7,5,0" Content="Play"
+                        FontSize="30"
+                        FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                        Command="{Binding UpdateViewCommand}"
+                        CommandParameter="Difficulty"/>
+                <Button Name="About" 
+                        Height="90" Margin="5,7,5,0" Content="About"
+                        FontSize="30"
+                        FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                        Command="{Binding UpdateViewCommand}"
+                        CommandParameter="About"/>
+                <Button Name="Exit"
+                        Height="90" Margin="5,7,5,0" Content="Exit"
+                        FontSize="30"
+                        FontFamily="/Fonts/Ubuntu/#Ubuntu"
+                        Click="Exit_Click"/>
+            </StackPanel>
+    </Grid>
+</UserControl>
